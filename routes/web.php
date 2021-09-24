@@ -5,9 +5,11 @@ use App\Http\Controllers\PostsController;
 
 
 
-Route::resource('posts', 'App\Http\Controllers\PostsController');
+// Route::resource('posts', 'App\Http\Controllers\PostsController');
 
 Route::get('/contact', [PostsController::class, 'contact']);
+
+Route::get('/post/{id}/{firstname}/{secondname}', [PostsController::class, 'show_post']);
 
 
 // Route::get('/posts', [PostsController::class, 'index']);

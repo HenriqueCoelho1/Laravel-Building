@@ -36,4 +36,10 @@ class PostsController extends Controller
 
     }
 
+    public function show_post($id, $first_name, $second_name){
+        // return view('post')->with('id', $id);
+
+        return view('post', compact('id', 'first_name', 'second_name'));
+    }
+
 }
