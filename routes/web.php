@@ -7,6 +7,8 @@ use App\Http\Controllers\PostsController;
 
 Route::resource('posts', 'App\Http\Controllers\PostsController');
 
+Route::get('/contact', [PostsController::class, 'contact']);
+
 
 // Route::get('/posts', [PostsController::class, 'index']);
 

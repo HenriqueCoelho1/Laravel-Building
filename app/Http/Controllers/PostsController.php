@@ -31,4 +31,9 @@ class PostsController extends Controller
         return "This is the create method";
     }
 
+    public function contact(){
+        return view('contact');
+
+    }
+
 }
