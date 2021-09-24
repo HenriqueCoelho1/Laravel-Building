@@ -5,9 +5,12 @@ use App\Http\Controllers\PostsController;
 
 
 
-Route::get('/posts', [PostsController::class, 'index']);
+Route::resource('posts', 'App\Http\Controllers\PostsController');
 
-Route::get('/posts/{id}', [PostsController::class, 'withId']);
+
+// Route::get('/posts', [PostsController::class, 'index']);
+
+// Route::get('/posts/{id}', [PostsController::class, 'withId']);
 
 // Route::get('/', function () {
 //     return view('welcome');
