@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\PostsController;
 
 
@@ -10,6 +11,22 @@ use App\Http\Controllers\PostsController;
 Route::get('/contact', [PostsController::class, 'contact']);
 
 Route::get('/post/{id}/{firstname}/{secondname}', [PostsController::class, 'show_post']);
+
+// Route::get('/insert', function(){
+
+//     DB::insert("INSERT INTO posts(title, content) value(?, ?)", ['PHP insert data LARAVEL', 'Laravel text right here -->'] );
+
+// });
+
+Route::get('/read', function(){
+
+    $results = DB::select("SELECT * FROM posts WHERE id = ?", [1]);
+
+    foreach($results as $post){
+        return $post->title;
+    }
+
+});
 
 
 // Route::get('/posts', [PostsController::class, 'index']);
